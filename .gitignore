@@ -1,0 +1,5 @@
+node_modules/
+dist/
+.scratch/
+.firebase/
+firebase-debug.log
