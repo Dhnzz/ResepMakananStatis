@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ResepMakanan — Prototype IA List + Detail</title>
+  <link rel="stylesheet" href="/src/style.css" />
+  <!--
+    Keputusan layout terkunci (issue 03 #4):
+    - Header: sticky, judul kiri + nav Home — no auth.
+    - List: grid auto-fill min 260px (1 col <600px, 2 col <900px, 3 col >=900px), card: image 3/2 + title + description 1 baris + link Detail.
+    - Detail: max 720px center, image full, meta durasi/porsi placeholder (data belum ada — tunggu tiket 01 extended), bahan <ul>, langkah <ol>.
+    - Empty state: centered dashed card + CTA.
+    - Routing asumsi: hash #/ dan #/resep/:id (no rewrites, Firebase Hosting static aman) — SPA hash. Ganti ke history+rewrites jika tiket 02 putuskan C.
+    - Tokens: --color-* --space-* --radius — CSS vanilla saja.
+  -->
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#/">ResepMakanan</a>
+    <nav><a href="#/">Daftar Resep</a></nav>
+  </header>
+
+  <main id="app" class="container"></main>
+
+  <noscript class="container"><p>Aktifkan JavaScript untuk melihat daftar resep.</p></noscript>
+  <script type="module" src="/src/app.js"></script>
+</body>
+</html>
