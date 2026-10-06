@@ -6,13 +6,9 @@
   <title>ResepMakanan — Prototype IA List + Detail</title>
   <link rel="stylesheet" href="/src/style.css" />
   <!--
-    Keputusan layout terkunci (issue 03 #4):
-    - Header: sticky, judul kiri + nav Home — no auth.
-    - List: grid auto-fill min 260px (1 col <600px, 2 col <900px, 3 col >=900px), card: image 3/2 + title + description 1 baris + link Detail.
-    - Detail: max 720px center, image full, meta durasi/porsi placeholder (data belum ada — tunggu tiket 01 extended), bahan <ul>, langkah <ol>.
-    - Empty state: centered dashed card + CTA.
-    - Routing asumsi: hash #/ dan #/resep/:id (no rewrites, Firebase Hosting static aman) — SPA hash. Ganti ke history+rewrites jika tiket 02 putuskan C.
-    - Tokens: --color-* --space-* --radius — CSS vanilla saja.
+    Keputusan routing (issue #3 — 02): B SPA hash — URL: #/ (list), #/resep/:slug (detail). Navigate: <a href="#/resep/:id"> + hashchange, tanpa backend.
+    Implikasi Hosting: firebase.json tanpa rewrites (hash tidak dikirim ke server, refresh aman). Opsi C/D ditolak YAGNI: butuh rewrites/history + pre-render; add saat butuh SEO/url bersih.
+    Layout (issue #4): header sticky, grid auto-fill min 260px, detail max 720px, meta placeholder, tokens --color-* --space-* --radius CSS vanilla.
   -->
 </head>
 <body>

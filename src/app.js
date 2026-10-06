@@ -1,4 +1,5 @@
 import { recipes } from "./data/recipes.js";
+import { parseRoute } from "./router.js";
 
 const app = document.getElementById("app");
 
@@ -40,9 +41,8 @@ function renderDetail(id) {
 }
 
 function route() {
-  const hash = location.hash || "#/";
-  const m = hash.match(/^#\/resep\/([^/]+)\/?$/);
-  if (m) renderDetail(decodeURIComponent(m[1]));
+  const r = parseRoute(location.hash);
+  if (r.view === "detail") renderDetail(r.id);
   else renderList();
 }
 
